@@ -6,14 +6,14 @@ import json
 pygame.init()
 
 #getting the screen width and height of device currently running the program
-device_screen_info = pygame.display.Info()
+device_screen = pygame.display.Info()
 screen_width, screen_height = device_screen.current_w-100, device_screen.current_h-100
 
 # Create the screen
 screen = pygame.display.set_mode((screen_width, screen_height))
 
 # scale the loaded image to the screen size
-img = pygame.transform.scale(pygame.image.load('New folder/assets/0,0.png'), (screen_width,screen_height))
+img = pygame.transform.scale(pygame.image.load('assets/0,0 north.png'), (screen_width,screen_height))
 
 
 MAP_LOGIC = {}
@@ -28,50 +28,88 @@ screen.blit(img, (0, 0))
 pygame.display.update()
 
 
-class player():
+class Player():
 
     def __init__(self):
         self.current_pos = "(0,0)"
         self.orientation = "north"
 
+    def get_img(self):
+        return pygame.transform.scale(pygame.image.load(MAP_LOGIC[self.current_pos][self.orientation]["img"]), (screen_width,screen_height))
+
     def update_position(self, key_pressed):
-        if self.orientation == "north" and key_pressed == "north":
-            self.current_pos = MAP_LOGIC[str(self.current_pos)][self.orientation]["next_pos"]       # updating current position to next position
+        # north orientation
+        if self.orientation == "north" and key_pressed == "forward":
+            if 'next_pos' in MAP_LOGIC[self.current_pos][self.orientation]:
+                self.current_pos = MAP_LOGIC[self.current_pos][self.orientation]["next_pos"]       # updating current position to next position
+        
+        elif self.orientation == "north" and key_pressed == "left":
+            self.orientation = "west"
 
-        elif key_pressed == "backward":
-            self.current_pos = MAP_LOGIC[self.current_pos][self.orientation]["next_pos"]
-        elif key_pressed == "left":
-            self.orientation = MAP_LOGIC[self.current_pos][self.orientation]
-        elif key_pressed == "right":
-            self.orientation = MAP_LOGIC[self.current_pos][self.orientation]
+        elif self.orientation == "north" and key_pressed == "right":
+            self.orientation = "east"
 
+        #west
+        elif self.orientation == "west" and key_pressed == "forward":
+            if 'next_pos' in MAP_LOGIC[self.current_pos][self.orientation]:
+                self.current_pos = MAP_LOGIC[self.current_pos][self.orientation]["next_pos"]       # updating current position to next position
 
+        elif self.orientation == "west" and key_pressed == "left":
+            self.orientation = "south"
 
-def get_img(img_path):
-    return pygame.transform.scale(pygame.image.load(img_path), (screen_width,screen_height))
+        elif self.orientation == "west" and key_pressed == "right":
+            self.orientation = "north"
+        
+        #south
+        elif self.orientation == "south" and key_pressed == "forward":
+            if 'next_pos' in MAP_LOGIC[self.current_pos][self.orientation]:
+                self.current_pos = MAP_LOGIC[self.current_pos][self.orientation]["next_pos"]       # updating current position to next position
+
+        elif self.orientation == "south" and key_pressed == "left":
+            self.orientation = "east"
+
+        elif self.orientation == "south" and key_pressed == "right":
+            self.orientation = "west"
+
+        #east
+        elif self.orientation == "east" and key_pressed == "forward":
+            if 'next_pos' in MAP_LOGIC[self.current_pos][self.orientation]:
+                self.current_pos = MAP_LOGIC[self.current_pos][self.orientation]["next_pos"]       # updating current position to next position
+
+        elif self.orientation == "east" and key_pressed == "left":
+            self.orientation = "north"
+
+        elif self.orientation == "east" and key_pressed == "right":
+            self.orientation = "south"
+
+player = Player()
+run = True
 
 # Main loop
-while True:
+while run:
 
-    player = player()
-    
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
             sys.exit()
         elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_UP:
-                player.update_position("north")
+                player.update_position("forward")
             elif event.key == pygame.K_DOWN:
-                player.update_position("south")
+                player.update_position("back")
             elif event.key == pygame.K_LEFT:
-                player.update_position("west")
+                player.update_position("left")
             elif event.key == pygame.K_RIGHT:
-                player.update_position("east")
+                player.update_position("right")
 
-    img_on_screen = get_img(map[player.current_pos][img])
+    # walk through completed 
+    if player.current_pos == "(3,4)" and player.orientation == "west":
+        run = False
+
     screen.fill((255,255,255))
-    screen.blit(new_img,(0,0))
+
+    img_on_screen = player.get_img()
+    screen.blit(img_on_screen,(0,0))
 
     pygame.display.update()
 

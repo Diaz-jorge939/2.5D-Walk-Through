@@ -1,6 +1,5 @@
 {
     "(0,0)": {
-
             "north": {
                 "img": "assets/0,0 north.png",
                 "next_pos": "(0,1)"
@@ -45,15 +44,15 @@
             },
 
             "south":{
-                "img": "assets/-1,1 south.png",
-                "next_pos": "(-2,1)"
+                "img": "assets/-1,1 south.png"
             },
             
             "east":{
                 "img": "assets/-1,1 east.png"
             },
             "west":{
-                "img":"assets/-1,1 west.png"
+                "img":"assets/-1,1 west.png",
+                "next_pos":"(-2,1)"
             }
 
     },
@@ -237,5 +236,241 @@
         "west":{
             "img":"assets/-3,3 west.png"
         }
+    },
+    "(-3,4)": {
+
+        "north": {
+            "img": "assets/-3,4 north.png"
+        },
+
+        "south":{
+            "img": "assets/-3,4 south.png"
+        },
+        
+        "east":{
+            "img": "assets/-3,4 east.png",
+            "next_pos": "(-2,4)"
+        },
+        "west":{
+            "img":"assets/-3,4 west.png"
+        }
+    },
+    "(-2,4)": {
+
+        "north": {
+            "img": "assets/-2,4 north.png",
+            "next_pos":"(-2,5)"
+        },
+
+        "south":{
+            "img": "assets/-2,4 south.png"
+        },
+        
+        "east":{
+            "img": "assets/-2,4 east.png"
+        },
+        "west":{
+            "img":"assets/-2,4 west.png"
+        }
+    },
+    "(-2,5)": {
+
+        "north": {
+            "img": "assets/-2,5 north.png"
+        },
+
+        "south":{
+            "img": "assets/-2,5 south.png"
+        },
+        
+        "east":{
+            "img": "assets/-2,5 east.png",
+            "next_pos": "(-1,5)"
+        },
+        "west":{
+            "img":"assets/-2,5 west.png"
+        }
+    },
+    "(-1,5)": {
+
+        "north": {
+            "img": "assets/-1,5 north.png"
+        },
+
+        "south":{
+            "img": "assets/-1,5 south.png"
+        },
+        
+        "east":{
+            "img": "assets/-1,5 east.png",
+            "next_pos": "(0,5)"
+        },
+        "west":{
+            "img":"assets/-1,5 west.png"
+        }
+    },
+    "(0,5)": {
+
+        "north": {
+            "img": "assets/0,5 north.png"
+        },
+
+        "south":{
+            "img": "assets/0,5 south.png"
+        },
+        
+        "east":{
+            "img": "assets/0,5 east.png"
+        },
+        "west":{
+            "img":"assets/0,5 west.png",
+            "next_pos":"(-2,5)V"
+        }
+    },
+    "(-2,5)V": {
+
+        "north": {
+            "img": "assets/-2,5V north.png"
+        },
+
+        "south":{
+            "img": "assets/-2,5V south.png"
+        },
+        
+        "east":{
+            "img": "assets/-2,5V east.png"
+        },
+        "west":{
+            "img":"assets/-2,5V west.png",
+            "next_pos": "(-3,5)"
+        }
+    },
+    "(-3,5)": {
+
+        "north": {
+            "img": "assets/-3,5 north.png"
+        },
+
+        "south":{
+            "img": "assets/-3,5 south.png",
+            "next_pos":"(-3,4)V"
+        },
+        
+        "east":{
+            "img": "assets/-3,5 east.png"
+        },
+        "west":{
+            "img":"assets/-3,5 west.png"
+        }
+    },
+    "(-3,4)V": {
+
+        "north": {
+            "img": "assets/-3,4 north.png"
+        },
+
+        "south":{
+            "img": "assets/-3,4 south.png"
+        },
+        
+        "east":{
+            "img": "assets/-3,4 east.png",
+            "next_pos":"(-1,4)"
+        },
+        "west":{
+            "img":"assets/-3,4 west.png"
+        }
+    },
+    "(-1,4)": {
+
+        "north": {
+            "img": "assets/-1,4 north.png"
+        },
+
+        "south":{
+            "img": "assets/-1,4 south.png"
+        },
+        
+        "east":{
+            "img": "assets/-1,4 east.png",
+            "next_pos":"(0,4)"
+        },
+        "west":{
+            "img":"assets/-1,4 west.png"
+        }
+    },
+    "(0,4)": {
+
+        "north": {
+            "img": "assets/0,4 north.png"
+        },
+
+        "south":{
+            "img": "assets/0,4 south.png"
+        },
+        
+        "east":{
+            "img": "assets/0,4 east.png",
+            "next_pos":"(1,4)"
+        },
+        "west":{
+            "img":"assets/0,4 west.png"
+        }
+    },
+    "(1,4)": {
+
+        "north": {
+            "img": "assets/1,4 north.png"
+        },
+
+        "south":{
+            "img": "assets/1,4 south.png"
+        },
+        
+        "east":{
+            "img": "assets/1,4 east.png",
+            "next_pos":"(2,4)"
+        },
+        "west":{
+            "img":"assets/1,4 west.png"
+        }
+    },
+    "(2,4)": {
+
+        "north": {
+            "img": "assets/2,4 north.png"
+        },
+
+        "south":{
+            "img": "assets/2,4 south.png"
+        },
+        
+        "east":{
+            "img": "assets/2,4 east.png",
+            "next_pos":"(3,4)"
+        },
+        "west":{
+            "img":"assets/2,4 west.png"
+        }
+    },
+    "(3,4)": {
+
+        "north": {
+            "img": "assets/3,4 east.png"
+        },
+
+        "south":{
+            "img": "assets/3,4 east.png"
+        },
+        
+        "east":{
+            "img": "assets/3,4 east.png"
+        },
+        "west":{
+            "img":"assets/3,4 west.png"
+        }
     }
+
+
+    
 }
