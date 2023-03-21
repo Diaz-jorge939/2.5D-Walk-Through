@@ -88,7 +88,7 @@ class Player():
         #east
         elif self.orientation == "east" and key_pressed == "forward":
             if 'next_pos' in MAP_LOGIC[self.current_pos][self.orientation]:
-                self.visited_stack(self.current_pos)
+                self.visited_stack.append(self.current_pos)
                 self.current_pos = MAP_LOGIC[self.current_pos][self.orientation]["next_pos"]       # updating current position to next position
                 
         elif self.orientation == "east" and key_pressed == "left":
@@ -103,9 +103,12 @@ player = Player()
 while True:
 
     for event in pygame.event.get():
+        # checks if user quits game
         if event.type == pygame.QUIT:
             pygame.quit()
             sys.exit()
+        
+        #records which direction key is pressed, if any
         elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_UP:
                 player.update_position("forward")
@@ -124,6 +127,7 @@ while True:
         screen.blit(img_on_screen,(0,0))
 
         pygame.display.update()
+        pygame.time.delay(5000)  # Delay for 5 seconds so game doesnt end abruptly
         break
 
     screen.fill((255,255,255))
