@@ -14,8 +14,8 @@
             },
             "west":{
                 "img":"assets/0,0 west.png"
-            }
-
+            },
+            "default": "(0,0)"
     },
     "(0,1)": {
 
@@ -33,7 +33,8 @@
             "west":{
                 "img":"assets/0,1 west.png",
                 "next_pos": "(-1,1)"
-            }
+            },
+            "default": "(0,1)"
 
     },
     
@@ -53,7 +54,8 @@
             "west":{
                 "img":"assets/-1,1 west.png",
                 "next_pos":"(-2,1)"
-            }
+            },
+            "default": "(-1,1)"
 
     },
     "(-2,1)": {
@@ -71,7 +73,8 @@
             },
             "west":{
                 "img":"assets/-2,1 west.png"
-            }
+            },
+            "default": "(-2,1)"
     },
 
     "(-2,0)": {
@@ -90,7 +93,8 @@
             },
             "west":{
                 "img":"assets/-2,0 west.png"
-            }
+            },
+            "default": "(-2,0)"
     },
     "(-2,-1)": {
 
@@ -108,8 +112,8 @@
         "west":{
             "img":"assets/-2,-1 west.png",
             "next_pos": "(-3,-1)"
-
-        }
+        },
+        "default": "(-2,-1)"
     },
     "(-3,-1)": {
 
@@ -127,7 +131,8 @@
         "west":{
             "img":"assets/-3,-1 west.png",
             "next_pos": "(-4,-1)"
-        }
+        },
+        "default": "(-3,-1)"
     },
     "(-4,-1)": {
 
@@ -145,7 +150,8 @@
         },
         "west":{
             "img":"assets/-4,-1 west.png"
-        }
+        },
+        "default": "(-4,-1)"
     },
     "(-4,0)": {
 
@@ -163,7 +169,8 @@
         },
         "west":{
             "img":"assets/-4,0 west.png"
-        }
+        },
+        "default": "(-4,0)"
     },
     "(-4,1)": {
 
@@ -181,7 +188,8 @@
         },
         "west":{
             "img":"assets/-4,1 west.png"
-        }
+        },
+        "default": "(-4,-1)"
     },
     "(-3,1)": {
 
@@ -199,7 +207,8 @@
         },
         "west":{
             "img":"assets/-3,1 west.png"
-        }
+        },
+        "default": "(-3,1)"
     },
     "(-3,2)": {
 
@@ -217,7 +226,8 @@
         },
         "west":{
             "img":"assets/-3,2 west.png"
-        }
+        },
+        "default": "(-3,2)"
     },
     "(-3,3)": {
 
@@ -235,7 +245,8 @@
         },
         "west":{
             "img":"assets/-3,3 west.png"
-        }
+        },
+        "default": "(-3,3)"
     },
     "(-3,4)": {
 
@@ -253,7 +264,8 @@
         },
         "west":{
             "img":"assets/-3,4 west.png"
-        }
+        },
+        "default": "(-3,4)"
     },
     "(-2,4)": {
 
@@ -271,7 +283,8 @@
         },
         "west":{
             "img":"assets/-2,4 west.png"
-        }
+        },
+        "default": "(-2,4)"
     },
     "(-2,5)": {
 
@@ -289,7 +302,8 @@
         },
         "west":{
             "img":"assets/-2,5 west.png"
-        }
+        },
+        "default": "(-2,5)"
     },
     "(-1,5)": {
 
@@ -307,7 +321,8 @@
         },
         "west":{
             "img":"assets/-1,5 west.png"
-        }
+        },
+        "default": "(-1,5)"
     },
     "(0,5)": {
 
@@ -325,7 +340,8 @@
         "west":{
             "img":"assets/0,5 west.png",
             "next_pos":"(-2,5)V"
-        }
+        },
+        "default": "(0,5)"
     },
     "(-2,5)V": {
 
@@ -343,7 +359,8 @@
         "west":{
             "img":"assets/-2,5V west.png",
             "next_pos": "(-3,5)"
-        }
+        },
+        "default": "(-2,5)V"
     },
     "(-3,5)": {
 
@@ -361,7 +378,8 @@
         },
         "west":{
             "img":"assets/-3,5 west.png"
-        }
+        },
+        "default": "(-3,5)"
     },
     "(-3,4)V": {
 
@@ -379,7 +397,8 @@
         },
         "west":{
             "img":"assets/-3,4 west.png"
-        }
+        },
+        "default": "(-3,4)V"
     },
     "(-1,4)": {
 
@@ -397,7 +416,8 @@
         },
         "west":{
             "img":"assets/-1,4 west.png"
-        }
+        },
+        "default": "(-1,4)"
     },
     "(0,4)": {
 
@@ -415,7 +435,8 @@
         },
         "west":{
             "img":"assets/0,4 west.png"
-        }
+        },
+        "default": "(0,4)"
     },
     "(1,4)": {
 
@@ -433,7 +454,8 @@
         },
         "west":{
             "img":"assets/1,4 west.png"
-        }
+        },
+        "default": "(1,4)"
     },
     "(2,4)": {
 
@@ -451,7 +473,8 @@
         },
         "west":{
             "img":"assets/2,4 west.png"
-        }
+        },
+        "default": "(2,4)"
     },
     "(3,4)": {
 
@@ -468,9 +491,8 @@
         },
         "west":{
             "img":"assets/3,4 west.png"
-        }
+        },
+        "default": "(3,4)"
     }
 
-
-    
 }

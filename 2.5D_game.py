@@ -33,16 +33,27 @@ class Player():
     def __init__(self):
         self.current_pos = "(0,0)"
         self.orientation = "north"
+        # self.previous_orientation = "north"     #north by default 
+        self.visited_stack = []                 # stack data structure for back functionality
 
     def get_img(self):
         return pygame.transform.scale(pygame.image.load(MAP_LOGIC[self.current_pos][self.orientation]["img"]), (screen_width,screen_height))
 
     def update_position(self, key_pressed):
-        # north orientation
-        if self.orientation == "north" and key_pressed == "forward":
-            if 'next_pos' in MAP_LOGIC[self.current_pos][self.orientation]:
-                self.current_pos = MAP_LOGIC[self.current_pos][self.orientation]["next_pos"]       # updating current position to next position
         
+        # if key_pressed is back and there still is a previous position in visited queue
+        # then go back to previous position  
+        if key_pressed == "back" and self.visited_stack:
+            previous_position = self.visited_stack.pop()                        
+            self.current_pos = MAP_LOGIC[previous_position]["default"]
+            self.orientation = "north"                                          #
+        
+        # north orientation
+        elif self.orientation == "north" and key_pressed == "forward":
+            if 'next_pos' in MAP_LOGIC[self.current_pos][self.orientation]:
+                self.visited_stack.append(self.current_pos)
+                self.current_pos = MAP_LOGIC[self.current_pos][self.orientation]["next_pos"]       # updating current position to next position
+                
         elif self.orientation == "north" and key_pressed == "left":
             self.orientation = "west"
 
@@ -52,8 +63,9 @@ class Player():
         #west
         elif self.orientation == "west" and key_pressed == "forward":
             if 'next_pos' in MAP_LOGIC[self.current_pos][self.orientation]:
+                self.visited_stack.append(self.current_pos)
                 self.current_pos = MAP_LOGIC[self.current_pos][self.orientation]["next_pos"]       # updating current position to next position
-
+                
         elif self.orientation == "west" and key_pressed == "left":
             self.orientation = "south"
 
@@ -63,7 +75,9 @@ class Player():
         #south
         elif self.orientation == "south" and key_pressed == "forward":
             if 'next_pos' in MAP_LOGIC[self.current_pos][self.orientation]:
+                self.visited_stack.append(self.current_pos)
                 self.current_pos = MAP_LOGIC[self.current_pos][self.orientation]["next_pos"]       # updating current position to next position
+                
 
         elif self.orientation == "south" and key_pressed == "left":
             self.orientation = "east"
@@ -74,8 +88,9 @@ class Player():
         #east
         elif self.orientation == "east" and key_pressed == "forward":
             if 'next_pos' in MAP_LOGIC[self.current_pos][self.orientation]:
+                self.visited_stack(self.current_pos)
                 self.current_pos = MAP_LOGIC[self.current_pos][self.orientation]["next_pos"]       # updating current position to next position
-
+                
         elif self.orientation == "east" and key_pressed == "left":
             self.orientation = "north"
 
@@ -83,10 +98,9 @@ class Player():
             self.orientation = "south"
 
 player = Player()
-run = True
 
 # Main loop
-while run:
+while True:
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -104,7 +118,13 @@ while run:
 
     # walk through completed 
     if player.current_pos == "(3,4)" and player.orientation == "west":
-        run = False
+        screen.fill((255,255,255))
+
+        img_on_screen = player.get_img()
+        screen.blit(img_on_screen,(0,0))
+
+        pygame.display.update()
+        break
 
     screen.fill((255,255,255))
 
